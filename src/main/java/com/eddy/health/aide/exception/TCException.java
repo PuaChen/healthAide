@@ -1,7 +1,7 @@
 package com.eddy.health.aide.exception;
 
 
-import com.sumainfo.eddy.ops.util.JsonResult;
+import com.eddy.health.aide.util.JsonResult;
 
 /**
  * @Author PuaChen

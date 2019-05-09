@@ -40,7 +40,10 @@ public class TokenInterceptor implements HandlerInterceptor {
 
 
         if (StringUtils.isBlank(token)) {
-            token = new String(Base64.decodeBase64(request.getParameter(Const.PARAMS_TOKEN_KEY)));
+            String parameter = request.getParameter(Const.PARAMS_TOKEN_KEY);
+            if (StringUtils.isNotBlank(parameter)) {
+                token = new String(Base64.decodeBase64(parameter));
+            }
         }
 
         // 如果不是映射到方法直接通过

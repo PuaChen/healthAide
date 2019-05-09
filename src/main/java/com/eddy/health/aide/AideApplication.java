@@ -10,7 +10,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  * @author PuaChen
  */
 @SpringBootApplication
-@MapperScan(basePackages = {"com.eddy.health.aide"})
+@MapperScan(basePackages = {"com.eddy.health.aide.dao"})
 @ServletComponentScan
 @Log4j2
 public class AideApplication {

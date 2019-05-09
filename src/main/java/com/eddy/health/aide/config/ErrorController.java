@@ -1,10 +1,10 @@
 package com.eddy.health.aide.config;
 
 
-import com.sumainfo.eddy.ops.exception.InvalidParamsException;
-import com.sumainfo.eddy.ops.exception.LoginFailureException;
-import com.sumainfo.eddy.ops.exception.TCException;
-import com.sumainfo.eddy.ops.util.JsonResult;
+import com.eddy.health.aide.exception.InvalidParamsException;
+import com.eddy.health.aide.exception.LoginFailureException;
+import com.eddy.health.aide.exception.TCException;
+import com.eddy.health.aide.util.JsonResult;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.BindingResult;
@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.ConstraintViolationException;
 import java.util.List;
+
 
 /**
  * @Author PuaChen
