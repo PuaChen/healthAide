@@ -1,0 +1,11 @@
+#File Upload Setting
+upload:
+  dir-file-path: D:/Code_Temp/upload
+  url: http://192.168.1.2:9090/resources
+
+
+database:
+  user: root
+  pwd: chenzedeng
+  ip: 127.0.0.1
+  schema: health_aide

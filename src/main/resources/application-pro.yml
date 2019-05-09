@@ -1,0 +1,10 @@
+#File Upload Setting
+upload:
+  dir-file-path: /data/opsCode/upload
+  url: http://${database.ip}:9090/resources
+
+database:
+  user: ops
+  pwd: ops@123.com
+  ip: 127.0.0.1
+  schema: ops
