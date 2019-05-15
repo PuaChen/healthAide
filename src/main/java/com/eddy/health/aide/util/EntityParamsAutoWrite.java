@@ -24,9 +24,9 @@ public class EntityParamsAutoWrite {
                         field.set(obj, form);
                         break;
                     case "createUser":
-                        Integer userId = null;
+                        String userId = null;
                         try {
-                            userId = ContextUtil.getUserId();
+                            userId = ContextUtil.getUserId() + "";
                         } catch (Exception e) {
                         }
                         field.set(obj, userId);
@@ -69,9 +69,9 @@ public class EntityParamsAutoWrite {
                         field.set(obj, form);
                         break;
                     case "updateUser":
-                        Integer userId = null;
+                        String userId = null;
                         try {
-                            userId = ContextUtil.getUserId();
+                            userId = ContextUtil.getUserId() + "";
                         } catch (Exception e) {
                         }
                         field.set(obj, userId);

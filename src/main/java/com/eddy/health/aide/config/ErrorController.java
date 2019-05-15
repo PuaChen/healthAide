@@ -61,7 +61,8 @@ public class ErrorController {
         StringBuilder builder = new StringBuilder();
 
         for (FieldError error : fieldErrors) {
-            builder.append(error.getDefaultMessage() + "\n");
+            builder.append(error.getDefaultMessage());
+            break;
         }
         log.error("数据验证错误 ====> " + builder.toString());
         return JsonResult.error(builder.toString());

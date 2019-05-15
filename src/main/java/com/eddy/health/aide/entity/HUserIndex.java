@@ -2,11 +2,15 @@ package com.eddy.health.aide.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
-import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -23,106 +27,125 @@ public class HUserIndex implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-        /**
+    /**
      * id
      */
-         @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-        /**
+    /**
      * 用户编号
      */
-         private Integer userId;
+    private Integer userId;
 
-        /**
+    /**
      * 体温
      */
-         private Double animalHeat;
+    @NotNull(message = "请输入体温")
+    @DecimalMin(value = "35", message = "体温最小测量值为35")
+    @DecimalMax(value = "42", message = "体温最大测量值为42")
+    private Double animalHeat;
 
-        /**
+    /**
      * 血氧
      */
-         private Double blood;
+    @NotNull(message = "请输入血氧")
+    @DecimalMax(value = "0.99", message = "血氧最大测量值为0.99")
+    private Double blood;
 
-        /**
+    /**
+     * 血糖
+     */
+    @NotNull(message = "请输入血糖")
+    private Double glucose;
+
+    /**
      * 胆固醇
      */
-         private Double cholesterol;
+    @NotNull(message = "请输入胆固醇")
+    private Double cholesterol;
 
-        /**
+    /**
      * 血压
      */
-         private Double pressure;
+    @NotNull(message = "请输入血压 高压")
+    private Double pressureH;
 
-        /**
+    @NotNull(message = "请输入血压 低压")
+    private Double pressureL;
+
+    /**
      * 血尿酸
      */
-         private Double uric;
+    @NotNull(message = "请输入血尿酸")
+    private Double uric;
 
-        /**
+    /**
      * 甘油三酯
      */
-         private Double triglyceride;
+    @NotNull(message = "请输入甘油三酯")
+    private Double triglyceride;
 
-        /**
+    /**
      * 尿液酸碱度
      */
-         private Double urinePh;
+    @NotNull(message = "请输入尿液酸碱度")
+    private Double urinePh;
 
-        /**
+    /**
      * 疾病类型编号
      */
-         private Integer illnessId;
+    private Integer illnessId;
 
-        /**
+    /**
      * 结果值
      */
-         private Double val;
+    private Double val;
 
-        /**
+    /**
      * 创建时间
      */
-         private LocalDateTime createTime;
+    private LocalDateTime createTime;
 
-        /**
+    /**
      * 创建端
      */
-         private String createForm;
+    private String createForm;
 
-        /**
+    /**
      * 创建人
      */
-         private String createUser;
+    private String createUser;
 
-        /**
+    /**
      * 创建Function名
      */
-         private String createMethod;
+    private String createMethod;
 
-        /**
+    /**
      * 更新时间
      */
-         private LocalDateTime updateTime;
+    private LocalDateTime updateTime;
 
-        /**
+    /**
      * 更新端
      */
-         private String updateForm;
+    private String updateForm;
 
-        /**
+    /**
      * 更新人
      */
-         private String updateUser;
+    private String updateUser;
 
-        /**
+    /**
      * 更新Function名
      */
-         private String updateMethod;
+    private String updateMethod;
 
-        /**
+    /**
      * 是否弃用：1.正常，0.失效
      */
-         private Integer loseFlag;
+    private Integer loseFlag;
 
 
 }
