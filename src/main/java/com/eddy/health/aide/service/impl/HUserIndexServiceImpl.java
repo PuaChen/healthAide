@@ -200,7 +200,7 @@ public class HUserIndexServiceImpl extends ServiceImpl<HUserIndexMapper, HUserIn
             return false;
         }
         //判断胆固醇  正常范围大约是2.84至5.17
-        if (!(index.getGlucose() >= 2.84 && index.getGlucose() <= 5.17)) {
+        if (!(index.getCholesterol() >= 2.84 && index.getCholesterol() <= 5.17)) {
             return false;
         }
         //判断高压  正常范围大约是90至140
@@ -216,11 +216,11 @@ public class HUserIndexServiceImpl extends ServiceImpl<HUserIndexMapper, HUserIn
             return false;
         }
         //判断甘油三酯 正常范围大约是5至8
-        if (!(index.getUric() >= 5 && index.getUric() <= 8)) {
+        if (!(index.getTriglyceride() >= 5 && index.getTriglyceride() <= 8)) {
             return false;
         }
         //判断尿液酸碱 正常范围大约是4.6至8.0
-        if (!(index.getUric() >= 4.6 && index.getUric() <= 8.0)) {
+        if (!(index.getUrinePh() >= 4.6 && index.getUrinePh() <= 8.0)) {
             return false;
         }
         return true;
